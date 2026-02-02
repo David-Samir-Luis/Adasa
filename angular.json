@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "assignment14": {
+    "Adasa": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -37,7 +37,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "4MB"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "assignment14:build:production"
+              "buildTarget": "Adasa:build:production"
             },
             "development": {
-              "buildTarget": "assignment14:build:development"
+              "buildTarget": "Adasa:build:development"
             }
           },
           "defaultConfiguration": "development"

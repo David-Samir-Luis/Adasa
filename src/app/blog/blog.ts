@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Ipost, Iposts } from '../iposts';
 import { RouterLink } from '@angular/router';
 import { every } from 'rxjs';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-blog',
-  imports: [RouterLink],
+  imports: [FormsModule],
   templateUrl: './blog.html',
   styleUrl: './blog.css',
 })
@@ -606,7 +607,7 @@ export class Blog {
   filterCategory: string = 'all'
   numberOfPages: number = Math.ceil(this.filteredList.length / this.itemsPerPage);
   loopArray: number[] = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
-
+  // search:string='';
 
   puplishDate(date: string) {
     return new Date(date).toLocaleDateString("ar-EG", {
@@ -643,18 +644,38 @@ export class Blog {
   filterPosts(category: string) {
     if (category === 'all') {
       this.filteredList = this.data.posts;
-      this.numberOfPages = Math.ceil(this.filteredList.length / this.itemsPerPage);
-      this.loopArray = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
-      this.pageNumber = 1;
-      this.filterCategory = category;
     }
     else {
       this.filteredList = this.data.posts.filter((post) => post.category === category);
-      this.numberOfPages = Math.ceil(this.filteredList.length / this.itemsPerPage);
+    }
+    this.numberOfPages = Math.ceil(this.filteredList.length / this.itemsPerPage);
       this.loopArray = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
       this.pageNumber = 1;
       this.filterCategory = category;
-    }
+
   }
+
+  searchPost(event:Event)
+  {
+    let list:Ipost[]=[];
+    if (this.filterCategory === 'all') {
+      list= this.data.posts;
+    }
+    else {
+      list = this.data.posts.filter((post) => post.category === this.filterCategory);
+    }
+
+    let x=event.target as HTMLInputElement;
+    this.filteredList=list.filter((post)=>
+      post.title.toLocaleLowerCase().includes(x.value.toLocaleLowerCase())||
+    post.excerpt.toLocaleLowerCase().includes(x.value.toLocaleLowerCase()));
+    
+    this.numberOfPages = Math.ceil(this.filteredList.length / this.itemsPerPage);
+      this.loopArray = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
+      this.pageNumber = 1;
+
+
+  }
+
 
 }
