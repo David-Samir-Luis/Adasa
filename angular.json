@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Adasa": {
+    "assignment14": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -59,10 +59,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Adasa:build:production"
+              "buildTarget": "assignment14:build:production"
             },
             "development": {
-              "buildTarget": "Adasa:build:development"
+              "buildTarget": "assignment14:build:development"
             }
           },
           "defaultConfiguration": "development"
