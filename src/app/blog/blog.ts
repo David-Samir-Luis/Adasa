@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Iposts } from '../iposts';
+import { Ipost, Iposts } from '../iposts';
 import { RouterLink } from '@angular/router';
+import { every } from 'rxjs';
 
 @Component({
   selector: 'app-blog',
@@ -9,7 +10,6 @@ import { RouterLink } from '@angular/router';
   styleUrl: './blog.css',
 })
 export class Blog {
-  filteredList:string='all';
   displayType: 'grid' | 'list' = 'grid';
   data: Iposts = {
     posts: [
@@ -600,11 +600,14 @@ export class Blog {
       },
     },
   };
-  numberOfPages:number=Math.ceil(this.data.posts.length / 6);
-  loopArray:number[]=Array(this.numberOfPages).fill(0).map((_,i)=>i+1);
   pageNumber: number = 1;
-  itemsPerPage:number=6;
-  
+  itemsPerPage: number = 6;
+  filteredList: Ipost[] = this.data.posts;
+  filterCategory: string = 'all'
+  numberOfPages: number = Math.ceil(this.filteredList.length / this.itemsPerPage);
+  loopArray: number[] = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
+
+
   puplishDate(date: string) {
     return new Date(date).toLocaleDateString("ar-EG", {
       day: "numeric",
@@ -620,14 +623,38 @@ export class Blog {
   displayList() {
     this.displayType = 'list'
   }
-  changePage(item: number) {
+  changePage(item: number,) {
     this.pageNumber = item;
+    const element = document.querySelector('#cards') as HTMLDivElement;
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
-  moveStep(step: number) {    
+  moveStep(step: number) {
     this.pageNumber += step;
+    const element = document.querySelector('#cards') as HTMLDivElement;
+    element.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
   }
 
-  filterPosts(filder:string){
-  if(filder==='all'){}
+  filterPosts(category: string) {
+    if (category === 'all') {
+      this.filteredList = this.data.posts;
+      this.numberOfPages = Math.ceil(this.filteredList.length / this.itemsPerPage);
+      this.loopArray = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
+      this.pageNumber = 1;
+      this.filterCategory = category;
+    }
+    else {
+      this.filteredList = this.data.posts.filter((post) => post.category === category);
+      this.numberOfPages = Math.ceil(this.filteredList.length / this.itemsPerPage);
+      this.loopArray = Array(this.numberOfPages).fill(0).map((_, i) => i + 1);
+      this.pageNumber = 1;
+      this.filterCategory = category;
+    }
   }
+
 }

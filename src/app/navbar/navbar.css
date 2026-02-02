@@ -35,8 +35,9 @@
     color: white;
 }
 .active-tab{
-    background-color: #FD5B00;
-    color: white;
+    border: 1px solid rgba(249, 115, 22, 0.3);
+  background-color: rgba(249, 115, 22, 0.1);
+  color:oklab(0.71 0.14 0.16) !important;
 }
 .search-icon:hover{
     color: oklch(70.5% .213 47.604);
@@ -60,6 +61,10 @@
 @media (min-width: 768px) {
   .rounded-md-pill{
     border-radius: 800px;
+  }
+  .active-tab{
+    background-color: #FD5B00;
+    color: white !important;
   }
 }
 

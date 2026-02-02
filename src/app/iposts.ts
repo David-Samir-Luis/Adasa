@@ -1,7 +1,7 @@
 interface category{
       name: string, count: number, color: string
 }
-interface Ipost {
+export interface Ipost {
     id: number,
     slug: string,
     title: string,
