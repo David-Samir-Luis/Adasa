@@ -11,19 +11,22 @@
         </div>
         </div>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button  (click)="toggleNavbar()" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"><i class="fa-solid fa-bars text-neutral-400"></i></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div [class.show]="!isNavbarCollapsed" class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0 navbar-tabs-container rounded-md-pill mt-3 mt-md-0 rounded-16px text-center">
         <li class="nav-item">
-          <a class="nav-link text-neutral-400 navbar-tab rounded-md-pill rounded-12px" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-tab" routerLink="/">الرئيسية</a>
+          <a (click)="collapseNavbar()"
+           class="nav-link text-neutral-400 navbar-tab rounded-md-pill rounded-12px" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active-tab" routerLink="/">الرئيسية</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-neutral-400 navbar-tab rounded-md-pill rounded-12px" routerLinkActive="active-tab" routerLink="/blog">المدونة</a>
+          <a (click)="collapseNavbar()"
+          class="nav-link text-neutral-400 navbar-tab rounded-md-pill rounded-12px" routerLinkActive="active-tab" routerLink="/blog">المدونة</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link text-neutral-400 navbar-tab rounded-md-pill rounded-12px" >من نحن</a>
+          <a (click)="collapseNavbar()"
+          class="nav-link text-neutral-400 navbar-tab rounded-md-pill rounded-12px" >من نحن</a>
         </li>
         
       </ul>

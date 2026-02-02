@@ -604,7 +604,15 @@ export class Navbar {
     purple:'fa-solid fa-user',
     blue:'fa-solid fa-mountain-sun',
     orange:'fa-solid fa-sliders',
-    
+  }
 
+   isNavbarCollapsed = true;
+
+  collapseNavbar() {
+    this.isNavbarCollapsed = true;
+  }
+
+  toggleNavbar() {
+    this.isNavbarCollapsed = !this.isNavbarCollapsed;
   }
 }
