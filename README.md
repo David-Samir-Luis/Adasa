@@ -330,15 +330,6 @@ Special thanks to my instructor for their exceptional guidance, mentorship, and 
 
 ---
 
-## 📞 Contact
-
-For questions, suggestions, or collaboration opportunities:
-- Email: hello@adasah.com
-- Twitter: [@adasah](https://twitter.com/adasah)
-- GitHub: [Open an Issue](https://github.com/David-Samir-Luis/Adasa/issues)
-
----
-
 ## 🗺️ Roadmap
 
 Future enhancements planned:
