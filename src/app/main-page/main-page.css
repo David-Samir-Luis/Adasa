@@ -58,7 +58,7 @@ h1 span {
 }
 .header-info {
   margin-top: 64px;
-  width: 672px;
+  width: 100vw;
 }
 .info-item {
   border: 1px solid #262626;
