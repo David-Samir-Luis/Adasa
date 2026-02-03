@@ -1,29 +1,31 @@
-<header class="bg-black-custom d-flex flex-column align-items-center">
-  <div class="custom-badge rounded-pill mb-4 d-flex align-items-center gap-2 small">
+<header class="bg-black-custom ">
+ <div class="container d-flex flex-column align-items-center">
+   <div class="custom-badge rounded-pill mb-4 d-flex align-items-center gap-2 small">
     <div class="dot-1 rounded-circle"></div>
     <div class="dot-2 rounded-circle"></div>
     <span class="text-neutral-300 fw-semibold">مرحباً بك في {{data.siteInfo.name}}</span>
   </div>
   <h1 class="text-white text-center">اكتشف <span>فن</span> <br />التصوير الفوتوغرافي</h1>
-  <p class="text-neutral-400 fs-4 mb-5">
+  <p class="text-neutral-400 fs-4 mb-5 text-center">
     انغمس في أسرار المحترفين ونصائح عملية لتطوير مهاراتك في التصوير.
   </p>
-  <div class="d-flex gap-3">
+  <div class="d-flex flex-column flex-md-row gap-3 align-self-stretch align-self-md-center">
     <a routerLink="/blog"
-      class="d-flex align-items-center gap-2 explore-btn rounded-pill text-decoration-none text-white"
+      class="d-flex align-items-center justify-content-center gap-2 explore-btn rounded-pill text-decoration-none text-white"
     >
       <span> استكشف المقالات</span>
       <i class="fa-solid fa-arrow-left-long"></i>
     </a>
     <a
-      class="d-flex align-items-center gap-2 more-btn rounded-pill text-decoration-none text-white"
+      class="d-flex align-items-center justify-content-center gap-2 more-btn rounded-pill text-decoration-none text-white"
     >
       <i class="fa-solid fa-circle-info"></i>
       <span> اعرف المزيد</span>
     </a>
   </div>
   <div class="header-info">
-    <div class="row g-3">
+    <div class="container">
+      <div class="row g-3">
       <div class="col-6 col-md-3">
         <div class="info-item p-3 d-flex flex-column align-items-center">
           <i class="fa-solid fa-newspaper text-orange-500 fa-xl my-2"></i>
@@ -53,7 +55,9 @@
         </div>
       </div>
     </div>
+    </div>
   </div>
+ </div>
 </header>
 <main class="bg-black-custom">
   <div class="container">
