@@ -58,7 +58,8 @@ h1 span {
 }
 .header-info {
   margin-top: 64px;
-  width: 100vw;
+  /* width: 672px; */
+  width: 100%;
 }
 .info-item {
   border: 1px solid #262626;
@@ -354,6 +355,9 @@ input::placeholder{
   .card-special-text {
     height: 400px;
   }
+  .header-info {
+  width: 672px;
+}
 }
 
 @media (min-width: 992px) {
